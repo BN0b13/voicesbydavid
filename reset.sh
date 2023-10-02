@@ -13,4 +13,4 @@ npm install;
 # Build React app with said copy
 npm run build;
 # Print completion message
-echo "CosmicStrains.com Frontend reset script successfully completed."
+echo "VoicesByDavid.com Frontend reset script successfully completed."

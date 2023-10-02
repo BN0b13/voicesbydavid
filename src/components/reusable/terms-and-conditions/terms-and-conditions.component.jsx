@@ -24,9 +24,9 @@ const TermsAndConditions = ({ show, setShow }) => {
               <ModalSubheading>Last updated August 01, 2023</ModalSubheading>
               <ModalHeading>AGREEMENT TO OUR LEGAL TERMS</ModalHeading>
               <br />
-              We are Cosmic Strains Company," "we," "us," "our", a company registered in California, United States at 3400 Cottage Way, Ste G2 #18240 Sacramento CA 95825. We operate the website <a href="http://www.cosmicstrains.com" target="_blank" data-custom-class="link">http://www.cosmicstrains.com</a> (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services"). You can contact us by email at sales@cosmicstrains.com, or by mail to 3400 Cottage Way,Ste G2 #18240, Sacramento, CA 95825, United States.
+              We are Voices By David Company," "we," "us," "our", a company registered in Minnesota, United States at 3400 Cottage Way, Ste G2 #18240 Sacramento MN 95825. We operate the website <a href="http://www.voicesbydavid.com" target="_blank" data-custom-class="link">http://www.voicesbydavid.com</a> (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services"). You can contact us by email at davidilchertva@gmail.com, or by mail to 3400 Cottage Way,Ste G2 #18240, Sacramento, CA 95825, United States.
               <br />
-              These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and Cosmic Strains, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.
+              These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and Voices By David, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.
               <br />
               Users shall be notified upon login.
               <br />
@@ -83,7 +83,7 @@ const TermsAndConditions = ({ show, setShow }) => {
               <br />
               Except as set out in this section or elsewhere in our Legal Terms, no part of the Services and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission. 
               <br />
-              If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: sales@cosmicstrains.com. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content. 
+              If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: davidilchertva@gmail.com. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content. 
               <br />
               We reserve all rights not expressly granted to you in and to the Services, Content, and Marks. 
               <br />
@@ -274,7 +274,7 @@ const TermsAndConditions = ({ show, setShow }) => {
               <br />
               <ModalHeading>25. CONTACT US</ModalHeading>
               <br />
-              In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at: Cosmic Strains 3400 Cottage Way, Ste G2 #18240, Sacramento, CA 95825 United States
+              In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at: Voices By David 3400 Cottage Way, Ste G2 #18240, Sacramento, CA 95825 United States
           </TextContainer>
           <ModalButtonDiv>
             <Button onClick={() => setShow()}>Close</Button>
