@@ -22,14 +22,25 @@ import {
 const client = new Client();
 
 function App() {
-  const [ loading, setLoading ] = useState(false);
+  const [ loading, setLoading ] = useState(true);
+  const [ images, setImages ] = useState(null);
 
   useEffect(() => {
     const addView = async () => {
       await client.addView();
     }
 
+    const getImages = async () => {
+      const res = await client.getWelcomeImages();
+
+      res.rows.sort((a, b) => a.position - b.position);
+
+      setImages(res.rows);
+    }
+
     addView();
+    getImages();
+    setLoading(false);
   }, []);
 
   return (
@@ -46,7 +57,7 @@ function App() {
         <Header />
         <div id="page-wrap">
           <ContentContainer>
-            <HomePage />
+            <HomePage images={images} />
           </ContentContainer>
         </div>
         <Footer />

@@ -21,20 +21,7 @@ import {
 
 const client = new Client();
 
-const Welcome = () => {
-  const [ images, setImages ] = useState(null);
-
-    useEffect(() => {
-        const getImages = async () => {
-            const res = await client.getWelcomeImages();
-
-            res.rows.sort((a, b) => a.position - b.position);
-
-            setImages(res.rows);
-        }
-
-        getImages();
-    }, []);
+const Welcome = ({ images }) => {
 
   return (
     <WelcomeContainer theme={colors.primary} image={backSplash}>

@@ -15,13 +15,13 @@ import {
 
 const client = new Client();
 
-const HomePage = () => {
+const HomePage = ({ images }) => {
     const reelUrls = ['https://www.youtube.com/embed/H_JgrhvYNCM'];
 
     return (
         <HomePageContainer>
             <WelcomePageBackSplash />
-            <Welcome />
+            <Welcome images={images} />
             <InfoLinks />
             <LinkContainer  id="reels">
                 <Reels reels={reelUrls} />
