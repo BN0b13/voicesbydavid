@@ -11,8 +11,6 @@ import HomePage from './pages/home/home.pages';
 import Client from './tools/client';
 import { setMobileView } from './tools/mobileView';
 
-import { themeTokenName } from './config';
-
 import {
   AppLoadingContainer,
   ContentContainer,
@@ -23,23 +21,14 @@ const client = new Client();
 
 function App() {
   const [ loading, setLoading ] = useState(true);
-  const [ images, setImages ] = useState(null);
+  
 
   useEffect(() => {
     const addView = async () => {
       await client.addView();
     }
 
-    const getImages = async () => {
-      const res = await client.getWelcomeImages();
-
-      res.rows.sort((a, b) => a.position - b.position);
-
-      setImages(res.rows);
-    }
-
     addView();
-    getImages();
     setLoading(false);
   }, []);
 
@@ -57,7 +46,7 @@ function App() {
         <Header />
         <div id="page-wrap">
           <ContentContainer>
-            <HomePage images={images} />
+            <HomePage />
           </ContentContainer>
         </div>
         <Footer />
