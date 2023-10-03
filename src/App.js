@@ -15,11 +15,10 @@ import { setMobileView } from './tools/mobileView';
 
 import { themeTokenName } from './config';
 
-import backgroundImage from './assets/img/studio.jpg';
+import backgroundImage from './assets/img/background.jpg';
 
 import {
   AppLoadingContainer,
-  BackgroundImageContainer,
   ContentContainer,
   MainContainer
 } from './App.styles';
