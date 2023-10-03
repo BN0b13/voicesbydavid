@@ -1,22 +1,18 @@
-import { useContext } from 'react';
-
 import { menuItems } from '../../../../assets/menu-items';
 
-import { ConfigurationContext } from '../../../../contexts/configuration.context';
-
+import { colors } from '../../../../assets/custom-theme';
 import {
     NavigationContainer,
     HeaderLink
 } from './navigation.styles';
 
 const Navigation = () => {
-    const { colors } = useContext(ConfigurationContext);
 
     return (
-        <NavigationContainer theme={colors}>
+        <NavigationContainer theme={colors.primary}>
             {menuItems.map((item, index) => {
                 return (
-                    <HeaderLink key={index} theme={colors} href={item.path}>
+                    <HeaderLink key={index} theme={colors.primary} href={item.path}>
                         { item.title }
                     </HeaderLink>
                 );

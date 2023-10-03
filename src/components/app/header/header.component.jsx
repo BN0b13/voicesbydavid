@@ -1,12 +1,10 @@
-import { useContext } from 'react';
-
 import Navigation from './navigation/navigation.component';
 
 import { setMobileView } from '../../../tools/mobileView';
 
-import { ConfigurationContext } from '../../../contexts/configuration.context';
-
 import navLogo from '../../../assets/img/text.png';
+
+import { colors } from '../../../assets/custom-theme';
 
 import {
   HeaderNav,
@@ -18,19 +16,17 @@ import {
 } from './header.styles';
 
 const Header = () => {
-  const { colors } = useContext(ConfigurationContext);
-
   if(setMobileView()) {
     return (
-      <MobileHeaderNav theme={colors} />
+      <MobileHeaderNav theme={colors.primary} />
     )
   }
 
   return (
-    <HeaderNav theme={colors}>
+    <HeaderNav theme={colors.primary}>
       <LogoContainer>
         <LogoLink onClick={() => window.location = '/'} >
-          <Logo theme={colors} src={navLogo} />
+          <Logo theme={colors.primary} src={navLogo} />
         </LogoLink>
       </LogoContainer>
       <NavOptionsDiv>

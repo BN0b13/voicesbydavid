@@ -1,11 +1,7 @@
-import { useContext } from 'react';
-
-import Button from '../reusable/button/button.component';
-
-import { ConfigurationContext } from '../../contexts/configuration.context';
-
 import backgroundImage from '../../assets/img/about-background.jpg';
 import aboutImage from '../../assets/img/about-image.png';
+
+import { colors } from '../../assets/custom-theme';
 
 import {
     AboutContainer,
@@ -17,13 +13,12 @@ import {
 } from './about.styles';
 
 const About = () => {
-    const { colors } = useContext(ConfigurationContext);
 
     return (
-        <AboutContainer theme={colors} image={backgroundImage}>
-            <AboutOpacity theme={colors}>
+        <AboutContainer theme={colors.primary} image={backgroundImage}>
+            <AboutOpacity theme={colors.primary}>
                     <AboutImage src={aboutImage} />
-                <AboutTextContainer theme={colors}>
+                <AboutTextContainer theme={colors.primary}>
                     <AboutTitle>- About Me -</AboutTitle>
                     <AboutText>Please insert Bio here.</AboutText>
                 </AboutTextContainer>

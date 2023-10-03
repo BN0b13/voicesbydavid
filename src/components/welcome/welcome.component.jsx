@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Slideshow from '../reusable/slideshow/slideshow.component';
 import Spinner from '../reusable/spinner/spinner.component';
 
-import { ConfigurationContext } from '../../contexts/configuration.context';
-
 import Client from '../../tools/client';
 
 import backSplash from '../../assets/img/back-splash.jpg';
+
+import { colors } from '../../assets/custom-theme';
 
 import {
   WelcomeContainer,
@@ -24,8 +24,6 @@ const client = new Client();
 const Welcome = () => {
   const [ images, setImages ] = useState(null);
 
-  const { colors } = useContext(ConfigurationContext);
-
     useEffect(() => {
         const getImages = async () => {
             const res = await client.getWelcomeImages();
@@ -39,8 +37,8 @@ const Welcome = () => {
     }, []);
 
   return (
-    <WelcomeContainer theme={colors} image={backSplash}>
-      <WelcomeOpacity theme={colors}>
+    <WelcomeContainer theme={colors.primary} image={backSplash}>
+      <WelcomeOpacity theme={colors.primary}>
         <WelcomeImageContainer>
           {!images ?
               <Spinner />
@@ -48,7 +46,7 @@ const Welcome = () => {
               <Slideshow images={images} />
           }
         </WelcomeImageContainer>
-        <WelcomeTextContainer theme={colors}>
+        <WelcomeTextContainer theme={colors.primary}>
           <WelcomeTitle>Welcome to the Versatile World of David Ilchert</WelcomeTitle>
           <WelcomeSubtitle>Professional Voice Over Artist</WelcomeSubtitle>
           <WelcomeText>Step into the captivating realm of voice artistry with David Ilchert, a seasoned voice actor whose passion and talent bring stories to life. With a specialization in narration, video games, animations, character voicing, and commercials, David's versatile vocal range knows no bounds. Whether you're crafting an epic adventure, breathing life into animated characters, or making your brand resonate, David's mastery of tone, emotion, and character will immerse your audience in a world of sonic wonder. Join us as we explore the limitless possibilities of voice, and let David Ilchert be the voice that tells your story, your way.</WelcomeText>

@@ -1,15 +1,11 @@
-import { useContext } from 'react';
-
 import {
   FaInstagram
 } from 'react-icons/fa';
 import { setMobileView } from '../../../tools/mobileView';
 
-import { ConfigurationContext } from '../../../contexts/configuration.context';
+import { colors } from '../../../assets/custom-theme';
 
 import {
-  DisclaimerContainer,
-  DisclaimerText,
   FooterContainer,
   FooterText,
   IconContainer,
@@ -17,10 +13,9 @@ import {
 } from './footer.styles';
 
 const Footer = () => {
-  const { colors } = useContext(ConfigurationContext);
 
   return (
-  <MainContainer theme={colors}>
+  <MainContainer theme={colors.primary}>
     <IconContainer onClick={() => window.location.href = 'https://www.instagram.com'}>
       <FaInstagram size={setMobileView() ? '14' : '28'} />
     </IconContainer>
