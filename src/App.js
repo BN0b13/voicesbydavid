@@ -15,8 +15,6 @@ import { setMobileView } from './tools/mobileView';
 
 import { themeTokenName } from './config';
 
-import backgroundImage from './assets/img/background.jpg';
-
 import {
   AppLoadingContainer,
   ContentContainer,
@@ -77,7 +75,7 @@ function App() {
   
 
   return (
-    <MainContainer id="outer-container" className="App" backgroundImage={backgroundImage}>
+    <MainContainer id="outer-container" className="App">
       {loading ?
         <AppLoadingContainer>
           <Spinner />
@@ -88,9 +86,11 @@ function App() {
           <HamburgerMenu />
         }
         <Header />
-        <ContentContainer>
-          <HomePage />
-        </ContentContainer>
+        <div id="page-wrap">
+          <ContentContainer>
+            <HomePage />
+          </ContentContainer>
+        </div>
         <Footer />
       </>}
     </MainContainer>

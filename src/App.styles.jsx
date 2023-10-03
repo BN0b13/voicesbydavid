@@ -8,13 +8,6 @@ export const MainContainer = styled.div`
 
 `;
 
-// export const MainContainer = styled.div`
-//     background-image: ${props => `url(${props.backgroundImage})`};
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-attachment: fixed;
-// `;
-
 export const AppLoadingContainer = styled.div`
     display: flex;
     flex-direction: column;
