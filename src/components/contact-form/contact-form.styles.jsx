@@ -5,7 +5,7 @@ export const ContactFormContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 8vh auto 0 auto;
+    margin: 8vh 0 0 0;
 `;
 
 export const ButtonContainer = styled.div`
