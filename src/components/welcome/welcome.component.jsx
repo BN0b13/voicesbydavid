@@ -49,9 +49,9 @@ const Welcome = () => {
           }
         </WelcomeImageContainer>
         <WelcomeTextContainer theme={colors}>
-          <WelcomeTitle>David Ilchert</WelcomeTitle>
-          <WelcomeSubtitle>Voice Acting Expert</WelcomeSubtitle>
-          <WelcomeText>Welcome to my portfolio! Now accepting voice acting opportunities. Inquire below.</WelcomeText>
+          <WelcomeTitle>Welcome to the Versatile World of David Ilchert</WelcomeTitle>
+          <WelcomeSubtitle>Professional Voice Over Artist</WelcomeSubtitle>
+          <WelcomeText>Step into the captivating realm of voice artistry with David Ilchert, a seasoned voice actor whose passion and talent bring stories to life. With a specialization in narration, video games, animations, character voicing, and commercials, David's versatile vocal range knows no bounds. Whether you're crafting an epic adventure, breathing life into animated characters, or making your brand resonate, David's mastery of tone, emotion, and character will immerse your audience in a world of sonic wonder. Join us as we explore the limitless possibilities of voice, and let David Ilchert be the voice that tells your story, your way.</WelcomeText>
         </WelcomeTextContainer>
       </WelcomeOpacity>
     </WelcomeContainer>

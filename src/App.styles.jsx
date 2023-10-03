@@ -5,7 +5,10 @@ import {
 } from './styles/theme';
 
 export const MainContainer = styled.div`
-    
+    background-image: ${props => `url(${props.backgroundImage})`};
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 `;
 
 export const AppLoadingContainer = styled.div`
@@ -16,13 +19,6 @@ export const AppLoadingContainer = styled.div`
     height: 100vh;
     width: 100vw;
     background-color: rgba(0,0,0,0.9);
-`;
-
-export const BackgroundImageContainer = styled.div`
-    background-image: ${props => `url(${props.backgroundImage})`};
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
 `;
 
 export const ContentContainer = styled.div`

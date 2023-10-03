@@ -29,7 +29,7 @@ export const WelcomeImageContainer = styled.div`
 
 export const WelcomeTextContainer = styled.div`
     margin-top: ${headerHeight};
-    padding: 10px;
+    padding: 10px 40px;
     background-color: ${props => `rgba(${props.theme.backgroundOpacityDark})`};
     width: 80%;
     text-align: center;

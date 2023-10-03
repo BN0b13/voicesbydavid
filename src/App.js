@@ -78,7 +78,7 @@ function App() {
   
 
   return (
-    <MainContainer id="outer-container" className="App">
+    <MainContainer id="outer-container" className="App" backgroundImage={backgroundImage}>
       {loading ?
         <AppLoadingContainer>
           <Spinner />
@@ -89,11 +89,9 @@ function App() {
           <HamburgerMenu />
         }
         <Header />
-        <BackgroundImageContainer id="page-wrap" theme={theme} backgroundImage={backgroundImage}>
-          <ContentContainer>
-            <HomePage />
-          </ContentContainer>
-        </BackgroundImageContainer>
+        <ContentContainer>
+          <HomePage />
+        </ContentContainer>
         <Footer />
       </>}
     </MainContainer>
