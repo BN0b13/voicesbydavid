@@ -1,7 +1,3 @@
-html {
-  overflow: visible;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -17,6 +13,7 @@ body {
   overflow: none;
   height: 100vh;
   width: 100vw;
+  overflow: visible;
 }
 
 code {
