@@ -1,8 +1,5 @@
-@media only screen and (max-device-width: 480px) {
-  html {
-    height: calc(100% + 60px);
-    min-height: calc(100% + 60px);
-  }
+html {
+  overflow: visible;
 }
 
 body {
