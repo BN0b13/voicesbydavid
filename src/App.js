@@ -11,6 +11,8 @@ import HomePage from './pages/home/home.pages';
 import Client from './tools/client';
 import { setMobileView } from './tools/mobileView';
 
+import { viewTokenName } from './config';
+
 import {
   AppLoadingContainer,
   ContentContainer,
@@ -28,7 +30,15 @@ function App() {
       await client.addView();
     }
 
-    addView();
+    const viewAdded = sessionStorage.getItem(viewTokenName);
+
+    console.log('View Added: ', viewAdded);
+
+    if(viewAdded === null) {
+      addView();
+      sessionStorage.setItem(viewTokenName, true);
+    }
+    
     setLoading(false);
   }, []);
 

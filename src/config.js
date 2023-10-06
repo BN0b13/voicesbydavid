@@ -1,4 +1,5 @@
 export const themeTokenName = 'vbd-theme-token';
+export const viewTokenName = 'vbd-view-token';
 
 // Prod
 export const api = 'https://api.voicesbydavid.com';
