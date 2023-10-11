@@ -1,32 +1,68 @@
+import { api } from '../../../config';
+
+import { formatInputDate } from '../../../tools/helpers';
+
 import {
     MainContainer,
     PictureContainer,
     TestimonialImage,
-    TextContainer
+    PictureTextContainer,
+    TextOnlyContainer,
+    TextOnlyContainerCenter,
+    TextOnlyContainerStart,
+    TextOnlyContainerEnd
 } from './testimonial.styles';
 
 const Testimonial = ({index, testimonial}) => {
-    if(index % 2 !== 0) {
+
+    const leftPhoto = () => {
         return (
-            <MainContainer>
-                <TextContainer>
-                    {testimonial.testimonial}
-                </TextContainer>
+            <MainContainer onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>
                 <PictureContainer>
-                    <TestimonialImage src={testimonial.customer.picture.medium} />
+                    <TestimonialImage src={api + testimonial.path} />
+                </PictureContainer>
+                <PictureTextContainer>
+                    <TextOnlyContainerStart>{testimonial.testimonialDate && formatInputDate(testimonial.testimonialDate)}</TextOnlyContainerStart>
+                    <TextOnlyContainerCenter>{testimonial.testimonial}</TextOnlyContainerCenter>
+                    <TextOnlyContainerEnd>- {testimonial.title} {testimonial.firstName} {testimonial.lastName} {testimonial.initials}</TextOnlyContainerEnd>
+                    <TextOnlyContainerEnd>{testimonial.company}</TextOnlyContainerEnd>
+                </PictureTextContainer>
+            </MainContainer>
+        )
+    }
+
+    const rightPhoto = () => {
+        return (
+            <MainContainer onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>
+                <PictureTextContainer>
+                    <TextOnlyContainerStart>{testimonial.testimonialDate && formatInputDate(testimonial.testimonialDate)}</TextOnlyContainerStart>
+                    <TextOnlyContainerCenter>{testimonial.testimonial}</TextOnlyContainerCenter>
+                    <TextOnlyContainerStart>- {testimonial.title} {testimonial.firstName} {testimonial.lastName} {testimonial.initial}</TextOnlyContainerStart>
+                    <TextOnlyContainerStart>{`  ${testimonial.company}`}</TextOnlyContainerStart>
+                </PictureTextContainer>
+                <PictureContainer>
+                    <TestimonialImage src={api + testimonial.path} />
                 </PictureContainer>
             </MainContainer>
         )
     }
 
+    if(testimonial.path) {
+        if(index % 2 !== 0) {
+            return (rightPhoto())
+        }
+    
+        return (leftPhoto())
+    }
+
     return (
         <MainContainer>
-            <PictureContainer>
-                <TestimonialImage src={testimonial.customer.picture.medium} />
-            </PictureContainer>
-            <TextContainer>
-                {testimonial.testimonial}
-            </TextContainer>
+            <TextOnlyContainer onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>
+                <TextOnlyContainerStart>{testimonial.testimonialDate && formatInputDate(testimonial.testimonialDate)}</TextOnlyContainerStart>
+                <TextOnlyContainerCenter>{testimonial.testimonial}</TextOnlyContainerCenter>
+                <TextOnlyContainerEnd>- {testimonial.title} {testimonial.firstName} {testimonial.lastName} {testimonial.initial}</TextOnlyContainerEnd>
+                <TextOnlyContainerEnd>{testimonial.company}</TextOnlyContainerEnd>
+            </TextOnlyContainer>
         </MainContainer>
     )
 }

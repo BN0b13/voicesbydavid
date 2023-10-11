@@ -56,6 +56,38 @@ export default class Client {
         return res;
     }
 
+    // Reels
+
+    async getReels() {
+        const requestOptions = this.fetchOptions(this.fetchMethods.get);
+        const welcomeImage = await fetch(`${api}/reels`, requestOptions);
+        const res = await welcomeImage.json();
+        return res;
+    }
+
+    async getVideoReels() {
+        const requestOptions = this.fetchOptions(this.fetchMethods.get);
+        const welcomeImage = await fetch(`${api}/reels/video`, requestOptions);
+        const res = await welcomeImage.json();
+        return res;
+    }
+
+    async streamVideoById(id) {
+        const requestOptions = this.fetchOptions(this.fetchMethods.get);
+        const welcomeImage = await fetch(`${api}/reels/video/${id}`, requestOptions);
+        const res = await welcomeImage.json();
+        return res;
+    }
+
+    // Testimonials
+
+    async getTestimonials() {
+        const requestOptions = this.fetchOptions(this.fetchMethods.get);
+        const welcomeImage = await fetch(`${api}/testimonials`, requestOptions);
+        const res = await welcomeImage.json();
+        return res;
+    }
+
     // Welcome
 
     async getWelcomeImages() {

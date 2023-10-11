@@ -32,8 +32,6 @@ function App() {
 
     const viewAdded = sessionStorage.getItem(viewTokenName);
 
-    console.log('View Added: ', viewAdded);
-
     if(viewAdded === null) {
       addView();
       sessionStorage.setItem(viewTokenName, true);

@@ -22,7 +22,8 @@ export const AboutOpacity = styled.div`
     width: 100%;
     height: 100%;
     text-align: center;
-    border-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 `;
 
 export const AboutTextContainer = styled.div`

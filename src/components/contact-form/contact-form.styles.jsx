@@ -5,7 +5,8 @@ export const ContactFormContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 8vh 0 0 0;
+    padding: 8vh 0 0 0;
+    background-color: rgba(0,0,0,0.6);
 `;
 
 export const ButtonContainer = styled.div`
@@ -15,10 +16,12 @@ export const ButtonContainer = styled.div`
 `;
 
 export const ContactFormInput = styled.input`
+    width: 250px;
     margin-bottom: 15px;
 `;
 
 export const ContactFormTextArea = styled.textarea`
     height: 200px;
     width: 300px;
+    margin-bottom: 20px;
 `;

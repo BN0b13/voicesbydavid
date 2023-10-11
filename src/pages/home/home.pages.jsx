@@ -5,18 +5,13 @@ import Reels from '../../components/reels/reels.component';
 import Testimonials from '../../components/testimonials/testimonials.component';
 import Welcome from '../../components/welcome/welcome.component';
 
-import Client from '../../tools/client';
-
 import {
     HomePageContainer,
     LinkContainer,
     WelcomePageBackSplash
 } from './home.styles';
 
-const client = new Client();
-
 const HomePage = () => {
-    const reelUrls = ['https://www.youtube.com/embed/H_JgrhvYNCM'];
 
     return (
         <HomePageContainer>
@@ -24,7 +19,7 @@ const HomePage = () => {
             <Welcome />
             <InfoLinks />
             <LinkContainer  id="reels">
-                <Reels reels={reelUrls} />
+                <Reels />
             </LinkContainer>
             <LinkContainer id="testimonials">
                 <Testimonials />

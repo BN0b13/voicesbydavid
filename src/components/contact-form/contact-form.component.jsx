@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 
 import Button from '../reusable/button/button.component';
 import Snackbar from '../reusable/snackbar/snackbar.component';
@@ -22,6 +23,7 @@ const ContactForm = () => {
   const [ phone, setPhone ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ message, setMessage ] = useState('');
+  const [ reCaptchaResult, setReCaptchaResult ] = useState('');
 
   const [ showMsg, setShowMsg ] = useState(false);
   const [ msgType, setMsgType ] = useState('error');
@@ -37,11 +39,16 @@ const ContactForm = () => {
     }
   }
 
+  const onChange = async (result) => {
+    setReCaptchaResult(result);
+  }
+
   const submitMessage = async () => {
     if(firstName === '' ||
       lastName === '' ||
       phone === '' ||
-      email === '') {
+      email === '' ||
+      reCaptchaResult === '') {
         setMsgType('error');
         setMsgContent('Please complete all fields to submit your message.')
         setShowMsg(true);
@@ -54,14 +61,22 @@ const ContactForm = () => {
         lastName,
         phone,
         email,
-        message
+        message,
+        reCaptcha: reCaptchaResult
       };
 
-      await client.postMessage(data);
+      const res = await client.postMessage(data);
+      
+      if(res.status === 201) {
+        setShowBtn(false);
+        setMsgType('success');
+        setMsgContent('Thank you for your message! I will get back to you as soon as I can.');
+        setShowMsg(true);
+        return;
+      }
 
-      setShowBtn(false);
-      setMsgType('success');
-      setMsgContent('Thank you for your message! I will get back to you as soon as I can.')
+      setMsgType('error');
+      setMsgContent('There was an error submitting your message. Please try again.');
       setShowMsg(true);
 
     } catch (err) {
@@ -78,6 +93,10 @@ const ContactForm = () => {
       <ContactFormInput type='text' value={phone} onChange={(e) => handlePhoneChange(e.target.value)} placeholder='Phone' />
       <ContactFormInput type='text' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
       <ContactFormTextArea value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message' />
+      <ReCAPTCHA
+        sitekey="6LdPvH8oAAAAAOASC95jjoGq7Gf8NibEwb3SRPjH"
+        onChange={onChange}
+      />
       {showMsg &&
           <Snackbar msg={msgContent} type={msgType} show={setShowMsg} />
       }
