@@ -79,28 +79,28 @@ export default class Client {
         return res;
     }
 
+    // Sections
+
+    async getAboutSection() {
+        const requestOptions = this.fetchOptions(this.fetchMethods.get);
+        const welcomeContent = await fetch(`${api}/sections/about`, requestOptions);
+        const res = await welcomeContent.json();
+        return res;
+    }
+
+    async getWelcomeSection() {
+        const requestOptions = this.fetchOptions(this.fetchMethods.get);
+        const welcomeContent = await fetch(`${api}/sections/welcome`, requestOptions);
+        const res = await welcomeContent.json();
+        return res;
+    }
+
     // Testimonials
 
     async getTestimonials() {
         const requestOptions = this.fetchOptions(this.fetchMethods.get);
         const welcomeImage = await fetch(`${api}/testimonials`, requestOptions);
         const res = await welcomeImage.json();
-        return res;
-    }
-
-    // Welcome
-
-    async getWelcomeImages() {
-        const requestOptions = this.fetchOptions(this.fetchMethods.get);
-        const welcomeImage = await fetch(`${api}/welcome/images`, requestOptions);
-        const res = await welcomeImage.json();
-        return res;
-    }
-
-    async getWelcomeContent() {
-        const requestOptions = this.fetchOptions(this.fetchMethods.get);
-        const welcomeContent = await fetch(`${api}/welcome/content`, requestOptions);
-        const res = await welcomeContent.json();
         return res;
     }
 }

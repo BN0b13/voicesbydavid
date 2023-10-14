@@ -7,20 +7,22 @@ import {
     AboutContainer,
     AboutImage,
     AboutOpacity,
+    AboutSubtitle,
     AboutText,
     AboutTextContainer,
     AboutTitle
 } from './about.styles';
 
-const About = () => {
+const About = ({ about }) => {
 
     return (
         <AboutContainer theme={colors.primary} image={backgroundImage}>
             <AboutOpacity theme={colors.primary}>
-                    <AboutImage src={aboutImage} />
+                    {about.imagesOn && <AboutImage src={aboutImage} />}
                 <AboutTextContainer theme={colors.primary}>
-                    <AboutTitle>- About Me -</AboutTitle>
-                    <AboutText>Please insert Bio here.</AboutText>
+                    {about.titleOn && <AboutTitle>{ about.title }</AboutTitle>}
+                    {about.subtitleOn && <AboutSubtitle>{ about.subtitle }</AboutSubtitle>}
+                    {about.paragraphOn && <AboutText>{ about.paragraph }</AboutText>}
                 </AboutTextContainer>
             </AboutOpacity>
         </AboutContainer>

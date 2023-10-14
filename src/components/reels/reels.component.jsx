@@ -1,9 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import ReactPlayer from 'react-player';
-
-import Spinner from '../reusable/spinner/spinner.component';
-
-import Client from '../../tools/client';
 
 import { setMobileView } from '../../tools/mobileView';
 
@@ -13,34 +9,12 @@ import {
 
 import './reels.css';
 
-const client = new Client();
-
-const Reels = () => {
-    const [ loading, setLoading ] = useState(true);
+const Reels = ({ reels }) => {
     const [index, setIndex] = useState(0);
-    const [ reels, setReels ] = useState('');
-
-    useEffect(() => {
-        const getVideoReels = async () => {
-            const res = await client.getReels();
-
-            const activeReels = res.rows.filter(reel => reel.active !== false);
-
-            activeReels.sort((a, b) => a.position - b.position);
-
-            setReels(activeReels);
-            setLoading(false);
-        }
-
-        getVideoReels();
-    }, []);
 
     return (
         <>
-            {loading ? 
-                <Spinner />
-            :
-                reels &&
+            {reels &&
                     <MainContainer>
                         <div
                             className="slideshowSlider"

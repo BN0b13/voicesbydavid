@@ -20,4 +20,16 @@ export const AppLoadingContainer = styled.div`
 
 export const ContentContainer = styled.div`
     padding-top: ${headerHeight};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+`;
+
+export const WelcomePageBackSplash = styled.div`
+    width: 100%;
+`;
+
+export const LinkContainer = styled.div`
+    width: 100%;
 `;

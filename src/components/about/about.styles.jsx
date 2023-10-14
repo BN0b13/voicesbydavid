@@ -38,6 +38,10 @@ export const AboutTitle = styled.h2`
 
 `;
 
+export const AboutSubtitle = styled.h3`
+
+`;
+
 export const AboutText = styled.h4`
 
 `;
