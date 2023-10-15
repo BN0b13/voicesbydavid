@@ -31,11 +31,11 @@ const divStyle = {
 };
 
 const Slideshow = ({ images }) => {
-  const [ autoPlay, setAutoPlay ] = useState(true);
+  const [ autoPlay, setAutoPlay ] = useState(false);
   
   useEffect(() => {
-    if(images.length <= 1) {
-      setAutoPlay(false);
+    if(images.length > 1) {
+      setAutoPlay(true);
     }
   }, []);
 

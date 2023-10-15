@@ -22,7 +22,7 @@ const Reels = ({ reels }) => {
                         >
                             {reels.map((reel, index) => (
                             <div
-                                className="slide"
+                                className="slideTwo"
                                 key={index}
                             >
                                 <ReactPlayer
