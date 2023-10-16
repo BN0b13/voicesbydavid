@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <HeaderNav theme={colors.primary}>
       <LogoContainer>
-        <LogoLink onClick={() => window.location = '/'} >
+        <LogoLink onClick={() => window.location = '/#welcome'} >
           <Logo theme={colors.primary} src={navLogo} />
         </LogoLink>
       </LogoContainer>
