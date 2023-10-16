@@ -19,7 +19,7 @@ export const WelcomeOpacity = styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${props => `rgba(${props.theme.backgroundOpacityLight})`};
-    padding: 5vh 0 5vh 0;
+    padding-top: 5vh;
     width: 100%;
 `;
 
@@ -33,6 +33,11 @@ export const WelcomeTextContainer = styled.div`
     background-color: ${props => `rgba(${props.theme.backgroundOpacityDark})`};
     width: 80%;
     text-align: center;
+`;
+
+export const Divider = styled.div`
+    height: 8vh;
+    width: 100%;
 `;
 
 export const WelcomeTitle = styled.h1`

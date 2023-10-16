@@ -7,6 +7,12 @@ export const MobileDropDownMenuLink = styled.a`
   color: #fff;
 `;
 
+export const MobileMenuText = styled.p`
+  cursor: pointer;
+  padding: 1em;
+  color: #fff;
+`;
+
 export const MobileDropDownMenu = styled.ul`
   margin: 0;
   padding: 0;

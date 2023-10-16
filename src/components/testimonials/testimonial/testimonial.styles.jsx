@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
-    width: ${setMobileView() ? '80%' : '60%'};
+    width: 60vw;
 `;
 
 export const PictureContainer = styled.div`
@@ -27,7 +27,7 @@ export const PictureTextContainer = styled.div`
     flex-direction: column;
     text-align: start;
     width: 70%;
-    padding: 10px 20px;
+    padding: ${setMobileView() ? '5px' : '20px 40px'};
 `;
 
 export const TextOnlyContainer = styled.div`
@@ -35,7 +35,8 @@ export const TextOnlyContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: ${setMobileView() ? '5px' : '20px 40px'};
+    width: 100%;
 `;
 
 export const TextOnlyContainerCenter = styled.div`

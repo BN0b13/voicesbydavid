@@ -17,7 +17,7 @@ const Testimonial = ({index, testimonial}) => {
 
     const leftPhoto = () => {
         return (
-            <MainContainer onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>
+            <MainContainer>
                 <PictureContainer>
                     <TestimonialImage src={api + testimonial.path} />
                 </PictureContainer>
@@ -25,7 +25,7 @@ const Testimonial = ({index, testimonial}) => {
                     <TextOnlyContainerStart>{testimonial.testimonialDate && formatInputDate(testimonial.testimonialDate)}</TextOnlyContainerStart>
                     <TextOnlyContainerCenter>{testimonial.testimonial}</TextOnlyContainerCenter>
                     <TextOnlyContainerEnd>- {testimonial.title} {testimonial.firstName} {testimonial.lastName} {testimonial.initials}</TextOnlyContainerEnd>
-                    <TextOnlyContainerEnd>{testimonial.company}</TextOnlyContainerEnd>
+                    <TextOnlyContainerEnd onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>{testimonial.company}</TextOnlyContainerEnd>
                 </PictureTextContainer>
             </MainContainer>
         )
@@ -33,12 +33,12 @@ const Testimonial = ({index, testimonial}) => {
 
     const rightPhoto = () => {
         return (
-            <MainContainer onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>
+            <MainContainer>
                 <PictureTextContainer>
                     <TextOnlyContainerStart>{testimonial.testimonialDate && formatInputDate(testimonial.testimonialDate)}</TextOnlyContainerStart>
                     <TextOnlyContainerCenter>{testimonial.testimonial}</TextOnlyContainerCenter>
                     <TextOnlyContainerStart>- {testimonial.title} {testimonial.firstName} {testimonial.lastName} {testimonial.initial}</TextOnlyContainerStart>
-                    <TextOnlyContainerStart>{`  ${testimonial.company}`}</TextOnlyContainerStart>
+                    <TextOnlyContainerStart onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>{`  ${testimonial.company}`}</TextOnlyContainerStart>
                 </PictureTextContainer>
                 <PictureContainer>
                     <TestimonialImage src={api + testimonial.path} />
@@ -57,11 +57,11 @@ const Testimonial = ({index, testimonial}) => {
 
     return (
         <MainContainer>
-            <TextOnlyContainer onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>
+            <TextOnlyContainer>
                 <TextOnlyContainerStart>{testimonial.testimonialDate && formatInputDate(testimonial.testimonialDate)}</TextOnlyContainerStart>
                 <TextOnlyContainerCenter>{testimonial.testimonial}</TextOnlyContainerCenter>
                 <TextOnlyContainerEnd>- {testimonial.title} {testimonial.firstName} {testimonial.lastName} {testimonial.initial}</TextOnlyContainerEnd>
-                <TextOnlyContainerEnd>{testimonial.company}</TextOnlyContainerEnd>
+                <TextOnlyContainerEnd onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>{testimonial.company}</TextOnlyContainerEnd>
             </TextOnlyContainer>
         </MainContainer>
     )

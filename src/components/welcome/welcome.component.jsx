@@ -5,6 +5,7 @@ import backSplash from '../../assets/img/back-splash.jpg';
 import { colors } from '../../assets/custom-theme';
 
 import {
+  Divider,
   WelcomeContainer,
   WelcomeImageContainer,
   WelcomeOpacity,
@@ -16,8 +17,6 @@ import {
 
 const Welcome = ({ welcome }) => {
   const images = welcome.SectionImages.sort((a, b) => a.position - b.position);
-
-  console.log('WELCOME Images: ', images);
 
   return (
     <WelcomeContainer theme={colors.primary} image={backSplash}>
@@ -36,6 +35,7 @@ const Welcome = ({ welcome }) => {
               </WelcomeTextContainer>
             </>
           }
+        <Divider id='reels' />
       </WelcomeOpacity>
     </WelcomeContainer>
   );

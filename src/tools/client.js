@@ -28,11 +28,20 @@ export default class Client {
         }   
     }
 
+    // Categories
+
+    async getCategories() {
+        const requestOptions = this.fetchOptions(this.fetchMethods.get);
+        const configuration = await fetch(`${api}/categories`, requestOptions);
+        const res = await configuration.json();
+        return res;
+    }
+
     // Configuration
 
-    async configuration() {
+    async socialMedia() {
         const requestOptions = this.fetchOptions(this.fetchMethods.get);
-        const configuration = await fetch(`${api}/configuration`, requestOptions);
+        const configuration = await fetch(`${api}/configuration/social-media`, requestOptions);
         const res = await configuration.json();
         return res;
     }

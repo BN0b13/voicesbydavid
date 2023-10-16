@@ -23,12 +23,16 @@ export const FooterContainer = styled.div`
     align-items: center;
 `;
 
-export const IconContainer = styled.div`
+export const IconsContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+`;
+
+export const IconContainer = styled.div`
     cursor: pointer;
+    margin: ${setMobileView() ? '0 5px' : '0 20px'};
 `;
 
 export const DisclaimerContainer = styled.div`

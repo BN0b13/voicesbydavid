@@ -29,8 +29,9 @@ const client = new Client();
 
 function App() {
   const [ loading, setLoading ] = useState(true);
+  const [ socialMedia, setSocialMedia ] = useState('');
   const [ aboutSection, setAboutSection ] = useState('');
-  const [ reelSection, setReelSection ] = useState('');
+  const [ reelCategories, setReelCategories ] = useState('');
   const [ testimonialSection, setTestimonialSection] = useState('');
   const [ welcomeSection, setWelcomeSection ] = useState('');
   
@@ -51,12 +52,19 @@ function App() {
   }, []);
 
   const getContent = async () => {
+    await getSocialMedia();
     await getAboutSection();
-    await getReelSection();
+    await getCategories();
     await getTestimonialSection();
     await getWelcomeSection();
     
     setLoading(false);
+  }
+
+  const getSocialMedia = async () => {
+    const getSocialMedia = await client.socialMedia();
+
+    setSocialMedia(getSocialMedia);
   }
 
   const getAboutSection = async () => {
@@ -64,11 +72,10 @@ function App() {
     setAboutSection(getAboutSection.rows[0]);
   }
 
-  const getReelSection = async () => {
-    const getReels = await client.getReels();
-    const activeReels = getReels.rows.filter(reel => reel.active !== false);
-    activeReels.sort((a, b) => a.position - b.position);
-    setReelSection(activeReels);
+  const getCategories = async () => {
+    const res = await client.getCategories();
+
+    setReelCategories(res.rows);
   }
 
   const getTestimonialSection = async () => {
@@ -95,25 +102,25 @@ function App() {
         }
         <Header />
         <div id="page-wrap">
-          <ContentContainer>
+          <ContentContainer id='welcome'>
             <WelcomePageBackSplash />
-            <Welcome welcome={welcomeSection} />
-            <InfoLinks />
-            <LinkContainer  id="reels">
-                <Reels reels={reelSection} />
+              <Welcome welcome={welcomeSection} />
+            {/* <InfoLinks /> */}
+            <LinkContainer>
+                <Reels reelCategories={reelCategories} />
             </LinkContainer>
-            <LinkContainer id="testimonials">
+            <LinkContainer id='testimonials'>
                 <Testimonials testimonials={testimonialSection} />
             </LinkContainer>
-            <LinkContainer id="about">
+            <LinkContainer id='about'>
                 <About about={aboutSection} />
             </LinkContainer>
-            <LinkContainer id="contact">
+            <LinkContainer id='contact'>
                 <ContactForm />
             </LinkContainer>
           </ContentContainer>
         </div>
-        <Footer />
+        <Footer socialMedia={socialMedia} />
       </>}
     </MainContainer>
   );
