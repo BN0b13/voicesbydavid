@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { setMobileView } from "../../tools/mobileView";
 
 export const AboutContainer = styled.div`
-    color: ${props => `rgba(${props.theme.text})`};
+    color: ${props => props.theme.text};
     background-image: ${props => `url(${props.image})`};
     background-repeat: no-repeat;
     background-size: cover;
