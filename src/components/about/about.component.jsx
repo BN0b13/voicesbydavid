@@ -17,7 +17,7 @@ import {
 const About = ({ about }) => (
     <AboutContainer theme={colors.primary} image={backgroundImage}>
         <AboutOpacity theme={colors.primary}>
-                {about.imagesOn && about.SectionImages.length > 0 && <AboutImage src={api + about.SectionImages[0].path} />}
+                {about.imagesOn && about.SectionImages.length > 0 && <AboutImage src={api + about.SectionImages[0].path + '-mobile.webp'} />}
             <AboutTextContainer theme={colors.primary}>
                 {about.titleOn && <AboutTitle>{ about.title }</AboutTitle>}
                 {about.subtitleOn && <AboutSubtitle>{ about.subtitle }</AboutSubtitle>}

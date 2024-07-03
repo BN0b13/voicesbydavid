@@ -25,7 +25,7 @@ const Testimonial = ({index, testimonial}) => {
                     <TextOnlyContainerStart>{testimonial.testimonialDate && formatInputDate(testimonial.testimonialDate)}</TextOnlyContainerStart>
                     <TextOnlyContainerCenter>{testimonial.testimonial}</TextOnlyContainerCenter>
                     <TextOnlyContainerEnd>- {testimonial.title} {testimonial.firstName} {testimonial.lastName} {testimonial.initials}</TextOnlyContainerEnd>
-                    <TextOnlyContainerEnd onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>{testimonial.company}</TextOnlyContainerEnd>
+                    <TextOnlyContainerEnd onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}-mobile.webp`) : ''}>{testimonial.company}</TextOnlyContainerEnd>
                 </PictureTextContainer>
             </MainContainer>
         )
@@ -38,7 +38,7 @@ const Testimonial = ({index, testimonial}) => {
                     <TextOnlyContainerStart>{testimonial.testimonialDate && formatInputDate(testimonial.testimonialDate)}</TextOnlyContainerStart>
                     <TextOnlyContainerCenter>{testimonial.testimonial}</TextOnlyContainerCenter>
                     <TextOnlyContainerStart>- {testimonial.title} {testimonial.firstName} {testimonial.lastName} {testimonial.initial}</TextOnlyContainerStart>
-                    <TextOnlyContainerStart onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}`) : ''}>{`  ${testimonial.company}`}</TextOnlyContainerStart>
+                    <TextOnlyContainerStart onClick={() => testimonial.url ? window.location.replace(`https://${testimonial.url}-mobile.webp`) : ''}>{`  ${testimonial.company}`}</TextOnlyContainerStart>
                 </PictureTextContainer>
                 <PictureContainer>
                     <TestimonialImage src={api + testimonial.path} />

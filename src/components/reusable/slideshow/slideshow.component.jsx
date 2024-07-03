@@ -49,14 +49,14 @@ const Slideshow = ({ images }) => {
                       <div key={index}>
                         {image.link ?
                           <a href={image.link}>
-                              <div style={{ ...divStyle, "backgroundImage": `url(${api}${image.path})` }}>
+                              <div style={{ ...divStyle, "backgroundImage": `url(${api}${image.path}-mobile.webp)` }}>
                                 {image.caption &&
                                   <span style={spanStyle}>{image.caption}</span>
                                 }
                               </div>
                           </a>
                         :
-                          <div style={{ ...divStyle, "backgroundImage": `url(${api}${image.path})` }}>
+                          <div style={{ ...divStyle, "backgroundImage": `url(${api}${image.path}-mobile.webp)` }}>
                             {image.caption &&
                               <span style={spanStyle}>{image.caption}</span>
                             }

@@ -16,6 +16,7 @@ import {
 } from './welcome.styles';
 
 const Welcome = ({ welcome }) => {
+  console.log('Section images: ', welcome.SectionImages);
   const images = welcome.SectionImages.sort((a, b) => a.position - b.position);
 
   return (
