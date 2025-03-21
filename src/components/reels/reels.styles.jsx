@@ -16,6 +16,7 @@ export const MainContainer = styled.div`
 export const ContentContainer = styled.div`
     margin: 8vh 0;
     min-height: 425px;
+    min-width: 300px;
 `;
 
 
